@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>SoundCloudMobile</title>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+  <link rel="apple-touch-icon"          href="/images/logo.png"/>
+  <link rel="apple-touch-startup-image" href="/images/startup.jpg" />
+  <script src="/javascripts/jquery-1.4.3.min.js"></script> 
+  <script src="/javascripts/jquery.cors.js"></script> 
+  <script src="/javascripts/jquery.tmpl.js"></script> 
+  <script src="/javascripts/application.js"></script> 
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+</head>
+  <body>
+    <!--<script id="tracks-tmpl" src="templates/tracks.tmpl" type="text/x-jquery-tmpl"></script>
+    <script id="user-tmpl"       src="templates/track.tmpl" type="text/x-jquery-tmpl"></script>
+    <script id="tracks-tmpl"     src="templates/tracks.tmpl" type="text/x-jquery-tmpl"></script>-->
+    
+    <script id="tracks-tmpl" type="text/x-jquery-tmpl">
+      <ul id='tracks'>
+        {{tmpl(tracks) "#track-tmpl"}}
+      </ul>
+    </script>
+    
+    <script id="track-tmpl" type="text/x-jquery-tmpl">
+      <li>${title} by ${user.username}</li>
+    </script>
+    
+    <script id="user-tmpl" type="text/x-jquery-tmpl">
+      <div>
+      <div class="avatar" style="background-image: url(${avatar_url})"></div>
+        <span class="username">${username}</span>
+      </div>
+    </script>
+    
+  </body>
+</html>

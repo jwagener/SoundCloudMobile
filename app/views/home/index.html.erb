@@ -8,25 +8,31 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
   <link rel="apple-touch-icon"          href="/images/logo.png"/>
   <link rel="apple-touch-startup-image" href="/images/startup.jpg" />
-  <script src="/javascripts/jquery-1.4.3.min.js"></script> 
+  <script src="/javascripts/jquery-1.4.3.min.js"></script>
+  <script src="/javascripts/jquery.mobile-1.0a1.js"></script>
   <script src="/javascripts/jquery.cors.js"></script> 
   <script src="/javascripts/jquery.tmpl.js"></script> 
   <script src="/javascripts/application.js"></script> 
-  <link rel="stylesheet" href="/stylesheets/application.css" />
+  <link rel="stylesheet" href="/stylesheets/jquery.mobile-1.0a1.css" />
 </head>
   <body>
+    <div data-role="page"> 
+    	<div data-role="header"><h1>SoundCloud</h1></div> 
+    	<div data-role="content"></div> 
+    	<div data-role="footer">test 2</div> 
+    </div>
     <!--<script id="tracks-tmpl" src="templates/tracks.tmpl" type="text/x-jquery-tmpl"></script>
     <script id="user-tmpl"       src="templates/track.tmpl" type="text/x-jquery-tmpl"></script>
     <script id="tracks-tmpl"     src="templates/tracks.tmpl" type="text/x-jquery-tmpl"></script>-->
     
     <script id="tracks-tmpl" type="text/x-jquery-tmpl">
-      <ul id='tracks'>
+      <ul id='tracks' data-role='listview'>
         {{tmpl(tracks) "#track-tmpl"}}
       </ul>
     </script>
     
     <script id="track-tmpl" type="text/x-jquery-tmpl">
-      <li>${title} by ${user.username}</li>
+      <li><a href="/${user.permalink}/${permalink}">${title} by ${user.username}</a></li>
     </script>
     
     <script id="user-tmpl" type="text/x-jquery-tmpl">

@@ -32,7 +32,8 @@ function renderUserPage(l) {
         .delegate('li','click',function() {
           playTrack($.tmplItem(this).data);
         })
-        .appendTo("body");
+        .listview()
+        .appendTo("div[data-role=content]");
     });
     
     $( "#user-tmpl" )
@@ -47,7 +48,7 @@ function renderTrackPage(l) {
         
     $( "#track-tmpl" )
       .tmpl( r )
-      .appendTo( "body" );
+      .appendTo( "div[data-role=content]" );
   });  
 }
 
